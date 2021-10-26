@@ -3,32 +3,28 @@
 {%- set componentScript %}components/{{componentName}}/script.js{% endset %}
 {%- set componentCss %}components/{{componentName}}/style.css{% endset -%}
 
-import {LitElement, css, html} from '/assets/lit'
-
-export class {{ componentClass }} extends LitElement {
+export class {{ componentClass }} extends HTMLElement {
 	constructor() {
     super();
-    this.attachShadow({ mode: "open" });
-	//declartive props
 
-	{% include componentScript %}
+    this.attachShadow({ mode: "open" });
   }
-  render() {
-	return html`
-	{{ content | safe}}
-	`;
+
+  connectedCallback() {
+
+    const { shadowRoot } = this;
+
+    shadowRoot.innerHTML = `
+			<style>
+			* {
+				box-sizing: border-box;
+			}
+			{% include componentCss %}
+			</style>
+			{{ content | safe}}
+    `;
+		{% include componentScript %}
   }
 }
-
-{{ componentClass }}.properties = {
-	//properties
-};
-
-{{ componentClass }}.styles = css`
-	* {
-		box-sizing: border-box;
-	}
-	{% include componentCss %}
-`;
 
 window.customElements.define("{{ componentName }}", {{ componentClass }});

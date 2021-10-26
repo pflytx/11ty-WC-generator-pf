@@ -1,0 +1,35 @@
+
+{%- set componentName = page.fileSlug %}
+{%- set componentClass = page.fileSlug | createClass %}
+{%- set componentScript %}components/{{componentName}}/script.js{% endset %}
+{%- set componentCss %}components/{{componentName}}/style.css{% endset -%}
+
+import {LitElement, css, html} from '/@lit/reactive-element/'
+
+export class {{ componentClass }} extends LitElement {
+	constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+	//declartive props
+
+	{% include componentScript %}
+  }
+  render() {
+	return html`
+	{{ content | safe}}
+	`;
+  }
+}
+
+{{ componentClass }}.properties = {
+	//properties
+};
+
+{{ componentClass }}.styles = css`
+	* {
+		box-sizing: border-box;
+	}
+	{% include componentCss %}
+`;
+
+window.customElements.define("{{ componentName }}", {{ componentClass }});

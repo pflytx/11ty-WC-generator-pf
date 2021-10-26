@@ -1,10 +1,12 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+// const lit = require("@lit/reactive-element");
 
 module.exports = function (eleventyConfig) {
   // Optional, used for the main application styles
   eleventyConfig.addWatchTarget("./src/app.css");
   eleventyConfig.addPassthroughCopy("./src/app.css");
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  // eleventyConfig.addPlugin(lit);
 
   // Allows transforming ex. `hello-world` into `HelloWorld`
   // for the component `class` export
