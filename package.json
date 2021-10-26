@@ -20,7 +20,8 @@
   "author": "5t3ph",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^0.11.0"
+    "@11ty/eleventy": "^0.11.0",
+    "lit": "^2.0.2"
   },
   "browserslist": [
     "last 2 versions"
