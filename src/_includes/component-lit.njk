@@ -4,7 +4,7 @@
 {%- set componentScript %}components/{{componentName}}/script.js{% endset %}
 {%- set componentCss %}components/{{componentName}}/style.css{% endset -%}
 
-import {LitElement, css, html} from '/@lit/reactive-element/'
+import {LitElement, css, html} from 'lit'
 
 export class {{ componentClass }} extends LitElement {
 	constructor() {

@@ -1,5 +1,5 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-// const lit = require("@lit/reactive-element");
+// const lit = require("lit");
 
 module.exports = function (eleventyConfig) {
   // Optional, used for the main application styles
@@ -19,7 +19,9 @@ module.exports = function (eleventyConfig) {
 
   //adding npm package for use
   eleventyConfig.addPassthroughCopy({
-    "node_modules/@lit": "assets/lit",
+    "node_modules/lit": "assets/lit",
+    "node_modules/lit-element": "assets/lit-element",
+    "node_modules/lit-html": "assets/lit-html",
   });
 
   return {
