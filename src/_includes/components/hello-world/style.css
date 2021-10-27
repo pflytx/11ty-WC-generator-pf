@@ -3,7 +3,7 @@
   color: var(--hw-color, white);
   font-size: var(--hw-font-size, 3rem);
   text-align: var(--hw-text-align, center);
-  opacity: 0;
+  opacity: .5;
   transition: opacity 180ms ease-in;
 }
 

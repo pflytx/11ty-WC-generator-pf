@@ -1,5 +1,5 @@
-const hw = shadowRoot.querySelector(".hello-world");
+// const hw = shadowRoot.querySelector(".hello-world");
 
-setTimeout(() => {
-	hw.classList.add('hello-world__visible');
-}, 1000);
+// setTimeout(() => {
+// 	hw.classList.add('hello-world__visible');
+// }, 1000);
