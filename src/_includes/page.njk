@@ -17,6 +17,9 @@
 
 	{%- if component %}
 	{% set componentUrl %}/components/{{ component}}.js{% endset %}
+	<p>{{ componentUrl | url}}</p>
+	<p>{{ page.url | url}}</p>
+	<p> {{ process.env.ELEVENTY_ROOT | url }}</p>
 	<script type="module" src="{{ componentUrl | url}}"></script>
 	{% endif -%}
 </body>
