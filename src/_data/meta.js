@@ -1,0 +1,1 @@
+module.exports = 'STATIC 2';
