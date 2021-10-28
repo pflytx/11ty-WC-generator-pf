@@ -1,5 +1,5 @@
 ---
-data: meta
+host: https://webcomp-generator-11ty.netlify.app
 ---
 
 <!DOCTYPE html>
@@ -21,10 +21,7 @@ data: meta
 
 	{%- if component %}
 	{% set componentUrl %}/components/{{ component}}.js{% endset %}
-	<p>{{ componentUrl | url}}</p>
-	<p>{{ componentUrl | url | absoluteUrl(componentUrl) }}</p>
-	<p>{{ page.url | url}}</p>
-	<p>{{ meta }}</p>
+	<p>{{ componentUrl | url | absoluteUrl(host) }}</p>
 	<script type="module" src="{{ componentUrl | url}}"></script>
 	{% endif -%}
 </body>
