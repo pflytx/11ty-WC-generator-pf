@@ -10,6 +10,14 @@ eleventyNavigation:
 
 <a href="https://github.com/5t3ph/11ty-web-component-generator" class="button">Fork on GitHub</a>
 
+<h2>Display pages for Components</h2>
+<ul>
+	{% for displaycomp in collections.displaycomps %}
+	<li><a href="{{ displaycomp.url }}">{{ displaycomp.data.title }}</a></li>
+	{% endfor %}
+</ul>
+
+
 <h2>Demo Component: Hello World</h2>
 
 <p>This very basic component will display a "Hello World" banner 1 second after load.</p>
